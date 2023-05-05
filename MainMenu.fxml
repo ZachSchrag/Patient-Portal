@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainMenuController">
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="welcomeLabel" layoutX="194.5" layoutY="25.0" text="Welcome &lt;role&gt; &lt;name&gt;">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="203.5" layoutY="50.0" text="What would you like to do?">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="accessButton" layoutX="210.2" layoutY="110.0" mnemonicParsing="false" onAction="#onAccess" text="Access Existing Record">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="editButton" layoutX="220.35" layoutY="175.0" mnemonicParsing="false" onAction="#onEdit" text="Edit Existing Record">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="uploadButton" layoutX="219.7" layoutY="240.0" mnemonicParsing="false" onAction="#onUpload" text="Upload New Record">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="removeButton" layoutX="204.77" layoutY="305.0" mnemonicParsing="false" onAction="#onRemove" text="Remove Existing Record">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="signOutButton" layoutX="14.0" layoutY="358.0" mnemonicParsing="false" onAction="#onSignOut" text="Sign Out">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Pane fx:id="argsPane" layoutX="150.0" layoutY="50.0" prefHeight="300.0" prefWidth="300.0" style="-fx-background-color: lightgrey;">
+               <children>
+                  <Button fx:id="argsCancel" layoutX="14.0" layoutY="261.0" mnemonicParsing="false" onAction="#onArgsCancel" text="Cancel">
+                     <font>
+                        <Font name="System Bold" size="12.5" />
+                     </font>
+                  </Button>
+                  <Label fx:id="argsMethodLabel" layoutX="109.0" layoutY="25.0" text="&lt;Method&gt;">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="argsFirstName" layoutX="64.5" layoutY="90.0" promptText="Patient First Name">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="argsLastName" layoutX="64.5" layoutY="160.0" promptText="Patient Last Name">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="argsSubmitButton" layoutX="116.875" layoutY="220.0" mnemonicParsing="false" onAction="#onArgsSubmit" text="Submit">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="86.74" layoutY="70.0" text="Patient's First Name:">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="87.75" layoutY="140.0" text="Patient's Last Name:">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="queryPane" layoutX="150.0" layoutY="50.0" prefHeight="300.0" prefWidth="300.0" style="-fx-background-color: lightgrey;">
+               <children>
+                  <TextField fx:id="queryPaneKey" editable="false" layoutX="50.0" layoutY="90.0" prefWidth="200.0">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="queryEncryptedData" alignment="CENTER" layoutX="50.0" layoutY="160.0" prefWidth="200.0" promptText="Paste Query Result">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="querySubmit" layoutX="107.5" layoutY="220.0" mnemonicParsing="false" onAction="#onQuerySubmit" text="View Data">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="queryMethodLabel" layoutX="109.0" layoutY="25.0" text="&lt;Method&gt;">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="queryCancel" layoutX="14.0" layoutY="261.0" mnemonicParsing="false" onAction="#onQueryCancel" text="Cancel">
+                     <font>
+                        <Font name="System Bold" size="12.5" />
+                     </font>
+                  </Button>
+                  <Label fx:id="queryTaskLabel" layoutX="48.0" layoutY="70.0" text="Please query the blockchain with:">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="queryResultLabel" layoutX="46.0" layoutY="140.0" text="Paste result from blockchain here:">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="queryCopyKey" layoutX="254.0" layoutY="92.0" mnemonicParsing="false" onAction="#onQueryCopyKey" text="Copy">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="queryFinished" layoutX="113.25" layoutY="160.0" mnemonicParsing="false" onAction="#onQueryFinished" text="Finished" visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="queryCopyData" layoutX="254.0" layoutY="162.0" mnemonicParsing="false" onAction="#onQueryCopyData" text="Copy">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane fx:id="dataPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: lightgrey;">
+               <children>
+                  <Button fx:id="dataClose" layoutX="14.0" layoutY="555.0" mnemonicParsing="false" onAction="#onDataClose" text="Close">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="81.9" layoutY="100.0" text="Name">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="dataName" editable="false" layoutX="25.0" layoutY="125.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="287.89" layoutY="100.0" text="Age">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="dataAge" editable="false" layoutX="225.0" layoutY="125.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="dataSex" editable="false" layoutX="425.0" layoutY="125.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="489.25" layoutY="100.0" text="Sex">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="634.26" layoutY="300.0" text="Symptoms">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="638.0" layoutY="100.0" text="Current Medications">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="368.36" layoutY="235.0" text="Last Visit">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="307.0" layoutY="385.0" text="Doctor's Notes From Last Visit">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="84.368" layoutY="300.0" text="Reason For Visit">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="358.35" layoutY="35.0" text="Patient Info">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="dataMeds" editable="false" layoutX="625.0" layoutY="125.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="385.7" layoutY="300.0" text="Date">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="dataReason" editable="false" layoutX="59.083" layoutY="325.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="dataDate" editable="false" layoutX="325.75" layoutY="325.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="dataSymptoms" editable="false" layoutX="592.4167" layoutY="325.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
+                  <TextArea fx:id="dataNotes" editable="false" layoutX="215.0" layoutY="415.0" prefHeight="80.0" prefWidth="370.0">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </TextArea>
+                  <Button fx:id="dataSubmit" layoutX="366.875" layoutY="540.0" mnemonicParsing="false" onAction="#onDataSubmit" text="Submit">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane fx:id="removePane" layoutX="150.0" layoutY="50.0" prefHeight="300.0" prefWidth="300.0" style="-fx-background-color: lightgrey;" visible="false">
+               <children>
+                  <Button layoutX="124.0" layoutY="247.0" mnemonicParsing="false" text="Finished">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="9.0" layoutY="50.0" text="Please call removeRecord with the following key:">
+                     <font>
+                        <Font name="System Bold" size="12.25" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
